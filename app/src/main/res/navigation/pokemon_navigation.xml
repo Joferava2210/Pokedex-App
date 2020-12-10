@@ -9,24 +9,14 @@
         android:id="@+id/loginFragment"
         android:name="com.framirez.pokedexapp.fragments.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_bottomMenuFragment"
+            app:destination="@id/bottomMenuFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/allPokemonFragment"
-        android:name="com.framirez.pokedexapp.fragments.AllPokemonFragment"
-        android:label="fragment_all_pokemon"
-        tools:layout="@layout/fragment_all_pokemon" />
-    <fragment
-        android:id="@+id/favoritesFragment"
-        android:name="com.framirez.pokedexapp.fragments.FavoritesFragment"
-        android:label="fragment_favorites"
-        tools:layout="@layout/fragment_favorites" />
-    <fragment
-        android:id="@+id/pokemonDetails"
-        android:name="com.framirez.pokedexapp.fragments.PokemonDetails"
-        android:label="fragment_pokemon_details"
-        tools:layout="@layout/fragment_pokemon_details" />
-    <activity
-        android:id="@+id/splashScreen"
-        android:name="com.framirez.pokedexapp.SplashScreen"
-        android:label="SplashScreen" />
+        android:id="@+id/bottomMenuFragment"
+        android:name="com.framirez.pokedexapp.fragments.BottomMenuFragment"
+        android:label="fragment_bottom_menu"
+        tools:layout="@layout/fragment_bottom_menu" />
 </navigation>

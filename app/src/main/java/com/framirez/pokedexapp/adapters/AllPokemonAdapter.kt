@@ -1,49 +1,33 @@
 package com.framirez.pokedexapp.adapters
 
-import android.app.Activity
-import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.framirez.pokedexapp.R
+import com.framirez.pokedexapp.models.CharacterResponse
+import com.framirez.pokedexapp.viewholders.AllPokemonViewHolder
 
-class AllPokemonAdapter(context: Context): BaseAdapter() {
+class AllPokemonAdapter : RecyclerView.Adapter<AllPokemonViewHolder>() {
 
-    private val activity: Activity? = null
-    private var inflater: LayoutInflater
-
-    init {
-        this.inflater = LayoutInflater.from(context)
-    }
-
-    override fun getCount(): Int {
-        return 0;
-    }
-
-    override fun getItem(p0: Int): Any {
-        return 0
-    }
-
-    override fun getItemId(p0: Int): Long {
-        return 0
-    }
-
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
-        if (inflater == null) {
-            if (activity != null) {
-                this.inflater = activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            }
+    var pokemons : List<CharacterResponse> = emptyList()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
         }
 
-        val view: View?
-        if (convertView == null) {
-            view = this.inflater.inflate(R.layout.adapter_all_pokemon, parent, false)
-        } else {
-            view = convertView
-        }
-        return view
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AllPokemonViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.pokemon_item_view_holder, parent, false)
+        return AllPokemonViewHolder(view)
     }
+
+    override fun onBindViewHolder(holder: AllPokemonViewHolder, position: Int) {
+        holder.bind(pokemons[position])
+    }
+
+    override fun getItemCount(): Int {
+        return pokemons.size
+    }
+
 
 }
 

@@ -15,6 +15,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/adapter_favorites_pokemon"/>
+        tools:listitem="@layout/pokemon_item_fav_view_holder"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

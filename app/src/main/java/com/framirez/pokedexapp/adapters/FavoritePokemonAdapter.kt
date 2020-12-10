@@ -1,47 +1,30 @@
 package com.framirez.pokedexapp.adapters
 
-import android.app.Activity
-import android.content.Context
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
+import androidx.recyclerview.widget.RecyclerView
 import com.framirez.pokedexapp.R
+import com.framirez.pokedexapp.models.CharacterResponse
+import com.framirez.pokedexapp.viewholders.FavoritePokemonViewHolder
 
-class FavoritePokemonAdapter(context: Context): BaseAdapter() {
+class FavoritePokemonAdapter : RecyclerView.Adapter<FavoritePokemonViewHolder>() {
 
-    private val activity: Activity? = null
-    private var inflater: LayoutInflater
-
-    init {
-        this.inflater = LayoutInflater.from(context)
-    }
-
-    override fun getCount(): Int {
-        return 0;
-    }
-
-    override fun getItem(p0: Int): Any {
-        return 0
-    }
-
-    override fun getItemId(p0: Int): Long {
-        return 0
-    }
-
-    override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View? {
-        if (inflater == null) {
-            if (activity != null) {
-                this.inflater = activity.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-            }
+    var pokemons: List<CharacterResponse> = emptyList()
+        set(value) {
+            field = value
+            notifyDataSetChanged()
         }
 
-        val view: View?
-        if (convertView == null) {
-            view = this.inflater.inflate(R.layout.adapter_favorites_pokemon, parent, false)
-        } else {
-            view = convertView
-        }
-        return view
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoritePokemonViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.pokemon_item_fav_view_holder, parent, false)
+        return FavoritePokemonViewHolder(view)
     }
+
+    override fun onBindViewHolder(holder: FavoritePokemonViewHolder, position: Int) {
+        holder.bind(pokemons[position])
+    }
+
+    override fun getItemCount() = pokemons.size
+
+
 }

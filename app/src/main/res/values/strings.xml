@@ -5,4 +5,7 @@
     <string name="log_in">Log In</string>
     <string name="et_usuario">Usuario</string>
     <string name="et_contraseña">Contraseña</string>
+    <string name="all_pokemon">All</string>
+    <string name="favorite_pokemon">Favorites</string>
+    <string name="info_pokemon">Information</string>
 </resources>

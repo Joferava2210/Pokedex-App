@@ -32,6 +32,12 @@ class AllPokemonFragment : Fragment() {
 
         viewModel.getPokemonListResponse().observe(viewLifecycleOwner){characterList ->
             adapter.pokemons = characterList
+            rcv_all_pokemon.visibility = View.VISIBLE
         }
+
+        viewModel.getIsLoading().observe(viewLifecycleOwner) { isLoading ->
+            pb_loading.visibility = if(isLoading) View.VISIBLE else View.GONE
+        }
+
     }
 }

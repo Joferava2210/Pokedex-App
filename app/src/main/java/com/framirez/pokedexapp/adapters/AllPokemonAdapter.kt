@@ -6,8 +6,14 @@ import androidx.recyclerview.widget.RecyclerView
 import com.framirez.pokedexapp.R
 import com.framirez.pokedexapp.models.CharacterResponse
 import com.framirez.pokedexapp.viewholders.AllPokemonViewHolder
+import io.reactivex.rxjava3.core.Observable
+import io.reactivex.rxjava3.subjects.PublishSubject
 
 class AllPokemonAdapter : RecyclerView.Adapter<AllPokemonViewHolder>() {
+
+    private val clickListener: PublishSubject<CharacterResponse> = PublishSubject.create()
+
+    val onCharacterClicked: Observable<CharacterResponse> = clickListener.hide()
 
     var pokemons : List<CharacterResponse> = emptyList()
         set(value) {
@@ -21,7 +27,7 @@ class AllPokemonAdapter : RecyclerView.Adapter<AllPokemonViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: AllPokemonViewHolder, position: Int) {
-        holder.bind(pokemons[position])
+        holder.bind(pokemons[position], clickListener)
     }
 
     override fun getItemCount(): Int {

@@ -14,9 +14,7 @@ class AllPokemonViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     fun bind(pokemon: CharacterResponse, listener: Observer<CharacterResponse>) {
         itemView.tv_poke_name.text = pokemon.name
         val id = pokemon.url.split("/")
-        Log.d("log_id", id.toString())
         val idFormatter = id[id.size-2]
-        Log.d("log_idFormatter", idFormatter)
         //val urlPicture = "https://github.com/PokeAPI/sprites/blob/master/sprites/pokemon/${idFormatter}.png"
         val urlPicture = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${idFormatter}.png"
         Log.d("log_urlPicture", urlPicture)

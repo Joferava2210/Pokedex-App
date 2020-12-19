@@ -1,4 +1,4 @@
-package com.framirez.pokedexapp
+package com.framirez.pokedexapp.viewmodels
 
 import android.util.Log
 import androidx.lifecycle.LiveData

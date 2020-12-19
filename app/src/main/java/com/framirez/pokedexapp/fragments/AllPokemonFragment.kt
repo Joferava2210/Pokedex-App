@@ -8,14 +8,16 @@ import androidx.recyclerview.widget.DividerItemDecoration.VERTICAL
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.DividerItemDecoration
-import com.framirez.pokedexapp.PokeListViewModel
+import com.framirez.pokedexapp.viewmodels.PokeListViewModel
 import com.framirez.pokedexapp.R
 import com.framirez.pokedexapp.adapters.AllPokemonAdapter
+import com.framirez.pokedexapp.viewmodels.CreatePokemonViewModel
 import kotlinx.android.synthetic.main.fragment_all_pokemon.*
 
 class AllPokemonFragment : Fragment() {
 
     private val viewModel: PokeListViewModel by viewModels()
+    private val viewModelCreate : CreatePokemonViewModel by viewModels()
     private val adapter = AllPokemonAdapter()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -37,6 +39,12 @@ class AllPokemonFragment : Fragment() {
 
         viewModel.getIsLoading().observe(viewLifecycleOwner) { isLoading ->
             pb_loading.visibility = if(isLoading) View.VISIBLE else View.GONE
+        }
+
+        adapter.getOnAddPokemonFavClick().observe(viewLifecycleOwner) { pokemon ->
+            if (pokemon != null) {
+                viewModelCreate.insertPokemon(pokemon)
+            }
         }
 
     }

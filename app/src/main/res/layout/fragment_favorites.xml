@@ -8,13 +8,15 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_favorites_pokemon"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="#2C6060"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        tools:itemCount="6"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/pokemon_item_fav_view_holder"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

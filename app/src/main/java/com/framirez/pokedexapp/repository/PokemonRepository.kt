@@ -11,4 +11,8 @@ class PokemonRepository (private val pokemonDAO: PokemonDAO) {
     }
 
     val allPokemon : Flow<List<PokemonEntity>> = pokemonDAO.getAllPokemon()
+
+    suspend fun deletePokemon(id: String) {
+        pokemonDAO.deletePokemon(id)
+    }
 }

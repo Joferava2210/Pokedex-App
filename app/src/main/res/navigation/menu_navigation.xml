@@ -9,7 +9,11 @@
         android:id="@+id/allPokemonFragment2"
         android:name="com.framirez.pokedexapp.fragments.AllPokemonFragment"
         android:label="fragment_all_pokemon"
-        tools:layout="@layout/fragment_all_pokemon" />
+        tools:layout="@layout/fragment_all_pokemon" >
+        <action
+            android:id="@+id/action_allPokemonFragment2_to_pokemonDetails2"
+            app:destination="@id/pokemonDetails2" />
+    </fragment>
     <fragment
         android:id="@+id/favoritesFragment2"
         android:name="com.framirez.pokedexapp.fragments.FavoritesFragment"
@@ -19,5 +23,9 @@
         android:id="@+id/pokemonDetails2"
         android:name="com.framirez.pokedexapp.fragments.PokemonDetails"
         android:label="fragment_pokemon_details"
-        tools:layout="@layout/fragment_pokemon_details" />
+        tools:layout="@layout/fragment_pokemon_details" >
+        <argument
+            android:name="pokemonName"
+            app:argType="string" />
+    </fragment>
 </navigation>

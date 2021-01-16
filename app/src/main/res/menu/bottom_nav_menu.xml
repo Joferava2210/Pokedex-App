@@ -11,9 +11,9 @@
         android:icon="@drawable/ic_baseline_menu_book_24"
         android:title="@string/favorite_pokemon"/>
 
-    <item
-        android:id="@+id/pokemonDetails2"
-        android:icon="@drawable/ic_baseline_menu_book_24"
-        android:title="@string/info_pokemon"/>
+<!--    <item-->
+<!--        android:id="@+id/pokemonDetails2"-->
+<!--        android:icon="@drawable/ic_baseline_menu_book_24"-->
+<!--        android:title="@string/info_pokemon"/>-->
 
 </menu>

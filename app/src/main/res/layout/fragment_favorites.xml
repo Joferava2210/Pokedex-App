@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragments.FavoritesFragment">
+    tools:context=".fragments.FavoritesFragment"
+    android:background="#2C6060">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rcv_favorites_pokemon"
@@ -17,6 +18,31 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:itemCount="6"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/pokemon_item_fav_view_holder"/>
+        tools:listitem="@layout/pokemon_item_fav_view_holder"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/img_no_hay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_pokemon_main"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/tv_no_hay"
+        android:visibility="visible"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:id="@+id/tv_no_hay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NO HAY POKEMONES PARA MOSTRAR"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/img_no_hay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="visible"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

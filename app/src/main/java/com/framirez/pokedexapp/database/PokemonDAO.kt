@@ -13,4 +13,6 @@ interface PokemonDAO {
     @Query("select * from pokemonentity")
     fun getAllPokemon(): Flow<List<PokemonEntity>>
 
+    @Query("DELETE FROM pokemonentity WHERE id = :id")
+    suspend fun deletePokemon(id: String)
 }

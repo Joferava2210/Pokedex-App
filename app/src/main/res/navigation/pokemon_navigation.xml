@@ -18,5 +18,14 @@
         android:id="@+id/bottomMenuFragment"
         android:name="com.framirez.pokedexapp.fragments.BottomMenuFragment"
         android:label="fragment_bottom_menu"
-        tools:layout="@layout/fragment_bottom_menu" />
+        tools:layout="@layout/fragment_bottom_menu" >
+        <action
+            android:id="@+id/action_bottomMenuFragment_to_pokemonInfoFragment"
+            app:destination="@id/pokemonInfoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pokemonInfoFragment"
+        android:name="com.framirez.pokedexapp.fragments.PokemonInfoFragment"
+        android:label="fragment_pokemon_details2"
+        tools:layout="@layout/fragment_pokemon_details2" />
 </navigation>
